@@ -67,8 +67,8 @@ jobs:
 
     steps:
       - name: Get the version
-          id: get_version
-          run: echo ::set-output name=VERSION::simple_collatz-${GITHUB_REF/refs\/tags\//}-py3-none-any.whl
+        id: get_version
+        run: echo ::set-output name=VERSION::simple_collatz-${GITHUB_REF/refs\/tags\//}-py3-none-any.whl
       - uses: actions/checkout@v2
 
       - name: Set up Python
