@@ -29,7 +29,7 @@ setup(
     author="Manas Mengle",
     url="https://github.com/appcreatorguy/collatz",
     project_urls={
-        "Changelog": "https://github.com/appcreatorguy/collatz/blob/main/CHANGES.md"
+        "Changelog": "https://github.com/appcreatorguy/collatz/blob/master/CHANGES.md"
     },
     license="MIT",
     py_modules=["_simple_collatz_version"],
