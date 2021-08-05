@@ -88,9 +88,9 @@ jobs:
 
       - name: Upload to PyPI via Twine
         env:
-          TWINE_PASSWORD: ${{ secrets.TESTPYPI_TOKEN }}
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}
         run: |
-          twine upload --verbose --repository testpypi -u '__token__' dist/*
+          twine upload --verbose -u '__token__' dist/*
       - name: Upload wheel as release asset
         uses: shogo82148/actions-upload-release-asset@v1.3.1
         env:
