@@ -24,10 +24,16 @@ def collatz(max_seed=10465, start_seed=1):
         start = start_seed
         fig, ax = plt.subplots()
         fail_fig, fail_ax = plt.subplots()
+        fig.suptitle("Collatz Conjecture Sequences")
+        fail_fig.suptitle("Collatz Conjecture Stopping Time")
         fail_bottom = [1]
+        fail_fig.supxlabel("Seed")
         fail_top = [0]
+        fail_fig.supylabel("Stopping Time (iterations)")
         bottom = []
+        fig.supxlabel("Iterations")
         top = []
+        fig.supylabel("Value")
         bottom.append(1)
         top.append(start)
         ax.plot(bottom, top)
@@ -44,13 +50,13 @@ def collatz(max_seed=10465, start_seed=1):
                 if top[-1] == 4:  # Loop failed
                     fail_bottom.append(fail_bottom[-1] + 1)
                     fail_top.append(bottom[-1])
-                    fail_ax.scatter(fail_bottom, fail_top)
                     print(top[0], "reached 1 after", bottom[-1], "iterations")
                     bottom.clear()
                     top.clear()
                     start += 1
                     if start == max_seed:
                         inLoop = False
+                        fail_ax.scatter(fail_bottom, fail_top)
                         return fail_top
                     bottom.append(1)
                     top.append(start)
