@@ -18,4 +18,4 @@ To run:
 
    - Download latest release from github
    - `pip install collatz-*.whl`
-   - python -m collatz.__init__
+   - `python -m collatz.__init__`
