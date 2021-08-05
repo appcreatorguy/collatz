@@ -1,3 +1,3 @@
 # Changes
 
-Fixed CI, changed versioning format
+Final CI test before pypi release.
