@@ -8,12 +8,15 @@ on:
 jobs:
   create_release:
     runs-on: ubuntu-latest
+    outputs:
+      upload_url: ${{ steps.create_release.outputs.upload_url }}
     steps:
       - name: Get the version
         id: get_version
         run: echo ::set-output name=VERSION::Version ${GITHUB_REF/refs\/tags\//}
       - uses: actions/checkout@v2
       - uses: ncipollo/release-action@v1.8.6
+        id: create_release
         with:
           name: ${{ steps.get_version.outputs.VERSION }}
           bodyFile: "CHANGES.md"
@@ -24,7 +27,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [windows-2019, ubuntu-20.04, macos-latest]
+        os: [windows-2019, ubuntu-20.04]
         include:
           - os: windows-2019
             asset_name: simple_collatz_windows.exe
