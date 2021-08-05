@@ -19,10 +19,7 @@ def get_long_description() -> str:
 
 setup(
     name="simple_collatz",
-    use_scm_version={
-        "write_to": "simple_collatz/__version__.py",
-        "write_to_template": 'version = "{version}"\n',
-    },
+    version="1.1.1-dev0",
     description="A simple collatz conjecture generator.",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
