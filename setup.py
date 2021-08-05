@@ -19,7 +19,7 @@ def get_long_description() -> str:
 
 setup(
     name="simple_collatz",
-    version="1.1.2-dev0",
+    version="1.1.2",
     description="A simple collatz conjecture generator.",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
